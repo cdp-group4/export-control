@@ -105,11 +105,11 @@
         <p>
           {% for paragraph in paragraphs %}
             <a href="/regulation/{{ paragraph.regulation.code }}" class="text-dark text-decoration-none">   
-              <p>{{paragraph.full_name}}: 
+              <p><b>{{paragraph.full_name}}</b>
                 {% if search_term %}
-                  {{paragraph.headline | safe}}...
+                  {{paragraph.text | safe}}
                 {% else %}
-                  {{paragraph.text | truncatechars:100}}
+                  {{paragraph.text | truncatechars:1000}}
                 {% endif %}
               </p>
             </a>
